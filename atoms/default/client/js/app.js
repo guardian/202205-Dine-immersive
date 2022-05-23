@@ -189,7 +189,7 @@ const Main = () => {
         return (
             <div className="glab-main" ref={mainRef}>
                 <Header />
-                <section style="height: 80vh;">
+                <section style="min-height: 80vh; padding: 4rem 0;">
                     <LoopingBgVid src={`${assetsPath}/hero_2.mp4`} />
                     <div className="body-block">
                         <PaddedContainer className="relative">
@@ -267,8 +267,13 @@ const Main = () => {
                         </CenterPara>
                     </PaddedContainer>
                     <div className="dual-image flex justify-center flex-wrap gap-4">
-                        <img src={`${assetsPath}/image_s3_001_2x.jpg`} width="512" />
-                        <img src={`${assetsPath}/image_s3_002_2x.jpg`} width="512" />
+                        <div>
+                            <img src={`${assetsPath}/image_s3_001_2x.jpg`} width="512" />
+
+                        </div>
+                        <div>
+                            <img src={`${assetsPath}/image_s3_002_2x.jpg`} width="512" />
+                        </div>
                     </div>
                     <PaddedContainer>
                         <CenterPara>
