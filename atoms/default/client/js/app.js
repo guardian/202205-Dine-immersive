@@ -62,7 +62,7 @@ const Header = () => {
         gsap.from(['.hub','.title','.standfirst'],{duration: 1, y: 20, alpha: 0, delay: 2, stagger: 0.3});
     },[])
     return (
-        <header>
+        <div className="labs-header">
             <LoopingBgVid src='hero.mp4' />
             <FlexContainer className="fl-col justify-end">
                 <PaidForBy/>
@@ -76,7 +76,7 @@ const Header = () => {
                 </h1> */}
                 <RawHtml markup={globalData.standfirst} className="pb-4 pt-4 mx-auto lg:w-2/5 text-center standfirst" />
             </FlexContainer>
-        </header>
+        </div>
     )
 }
 
