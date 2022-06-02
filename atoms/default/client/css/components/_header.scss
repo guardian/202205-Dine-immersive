@@ -52,6 +52,8 @@
       }
 
     }
+
+
   
   
     .attribution {
@@ -127,10 +129,11 @@
     position: absolute !important;
     top: 2rem;
     right: 2rem;
-    font-display: row;
     align-items: center;
     a {
       display: inline-block;
-      margin-left: 1rem;
+      // margin-left: 1rem;
+      font-weight: normal;
+
     }
   }

@@ -42,13 +42,14 @@ const PaddedContainer = ({children, className}) => {
 }
 
 const PaidForBy = () => {
-    const link = useSelector(s=>s.sheets.global[0].logoLink);
+    const data = useSelector(s=>s.content);
     
     return (
-        <FlexContainer className="paid-for " >
+        <div className="paid-for " >
             <p>Paid for by</p>
-            <a href={link} target='_blank'><img src='<%= path %>/logo.png' width="96"/></a>
-        </FlexContainer>
+            <a href={data.logoLink} target='_blank'><img src='<%= path %>/logo.png' width="96"/></a>
+            <div dangerouslySetInnerHTML={setHtml(data.aboutContent)} />
+        </div>
     )
 }
 
@@ -65,7 +66,8 @@ const Header = () => {
             <LoopingBgVid src='hero.mp4' />
             <FlexContainer className="fl-col justify-end">
                 <PaidForBy/>
-                <div>
+                <div className='title-wrap'>
+                    <div className="hub" dangerouslySetInnerHTML={setHtml(globalData.hubLink)}></div>
                     <h1 className="title text-bg text-center" dangerouslySetInnerHTML={setHtml(globalData.headline)}></h1>
                 </div>
                 {/* <h1>
@@ -189,7 +191,7 @@ const Main = () => {
         return (
             <div className="glab-main" ref={mainRef}>
                 <Header />
-                <section style="height: 80vh;">
+                <section style="height: 90vh;">
                     <LoopingBgVid src={`${assetsPath}/hero_2.mp4`} />
                     <div className="body-block">
                         <PaddedContainer className="relative">
@@ -203,8 +205,8 @@ const Main = () => {
 
                     </div>
                 </section>
-                <section style='height: 80vh;' className="overflow-visible">
-                    <LoopingBgVid src={`${assetsPath}/section_001_header.mp4`} />
+                <section style='height: 90vh;' className="overflow-visible">
+                    <LoopingBgVid image={`${assetsPath}/section_001_header.jpg`} />
                     <div className="flex items-end justify-center z-10 h-full absolute left-0 -bottom-8 w-full">
                         <RawHtml className="text-bg" markup={content.s1Title} tag="h1"/>
 
@@ -229,7 +231,7 @@ const Main = () => {
 
 
                 </section>
-                <section style='height: 80vh;' className="overflow-visible">
+                <section style='height: 90vh;' className="overflow-visible">
                     <LoopingBgVid src={`${assetsPath}/section_002_header.mp4`} />
                     <div className="flex items-end justify-center z-10 h-full absolute left-0 -bottom-8 w-full">
                         <RawHtml className="text-bg" markup={content.s2Title} tag="h1"/>
@@ -254,7 +256,7 @@ const Main = () => {
                         </div>
                     </PaddedContainer>
                 </section>      
-                <section style='height: 80vh;' className="overflow-visible">
+                <section style='height: 90vh;' className="overflow-visible">
                     <LoopingBgVid src={`${assetsPath}/section_003_header.mp4`} />
                     <div className="flex items-end justify-center z-10 h-full absolute left-0 -bottom-8 w-full">
                         <RawHtml className="text-bg" markup={content.s3Title} tag="h1"/>
@@ -285,7 +287,7 @@ const Main = () => {
                             <hr/>
                         </div>
 
-                        <div className="cta">
+                        <div className="cta text-center">
                             <div dangerouslySetInnerHTML={setHtml(content.cta)}></div>            
                         </div>
 

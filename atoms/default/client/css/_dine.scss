@@ -296,6 +296,24 @@ header {
       margin: 0 auto;
     }
   }
+  .title-wrap {
+    display: flex;
+    flex-direction: column;
+    a {
+      text-decoration: underline;
+    }
+    .hub {
+      margin: auto;
+      display: inline-block;
+      text-align: center;
+      background: black;
+      padding: 1rem;
+      font-size: 1.3rem;
+    }
+    h1 {
+      padding-top: 0;
+    }
+  }  
   // video {
   //   position: absolute;
   //   object-fit: cover;
