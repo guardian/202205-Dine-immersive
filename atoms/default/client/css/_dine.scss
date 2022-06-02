@@ -299,6 +299,7 @@ p.feature {
     h1 {
       max-width: 30rem;
       margin: 0 auto;
+      padding-bottom: 0;
     }
   }
   .title-wrap {
@@ -311,8 +312,8 @@ p.feature {
       margin: auto;
       display: inline-block;
       text-align: center;
-      background: black;
-      padding: 1rem;
+      background: #0005;
+      padding: 0.3rem 1rem .8rem;
       font-size: 1.3rem;
     }
     h1 {
