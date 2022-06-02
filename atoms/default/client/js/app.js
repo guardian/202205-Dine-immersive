@@ -59,7 +59,7 @@ const Header = () => {
     const globalData = useSelector(s=>s.content);
 
     useEffect(() => {
-        gsap.from(['.title','.standfirst'],{duration: 1, y: 20, alpha: 0, delay: 2, stagger: 0.3});
+        gsap.from(['.hub','.title','.standfirst'],{duration: 1, y: 20, alpha: 0, delay: 2, stagger: 0.3});
     },[])
     return (
         <header>
