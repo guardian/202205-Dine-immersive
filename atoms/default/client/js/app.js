@@ -63,7 +63,7 @@ const Header = () => {
     },[])
     return (
         <div className="labs-header">
-            <LoopingBgVid src='hero.mp4' />
+            <LoopingBgVid src={`${assetsPath}/hero.mp4`} />
             <FlexContainer className="fl-col justify-end">
                 <PaidForBy/>
                 <div className='title-wrap'>
@@ -120,20 +120,20 @@ const CenterPara = ({className, children}) =>
 const LoopingBgVid = ({src, image}) => 
     <div className="video-bg">
         {image &&
-        <div className="image" style={{backgroundImage: `url(<%= path %>/${image})`}} ></div>
+        <div className="image" style={{backgroundImage: `url(${image})`}} ></div>
         }
         {src && 
-        <video src={`<%= path %>/${src}`} loop muted='true' autoPlay width="400" height="200" playsInline></video>
+        <video src={`${src}`} loop muted='true' autoPlay width="400" height="200" playsInline></video>
         }
     </div>
 
 const CustomVideo = ({src, image}) => 
     <div className="video">
         {image &&
-        <div className="image" style={{backgroundImage: `url(<%= path %>/${image})`}} ></div>
+        <div className="image" style={{backgroundImage: `url(${image})`}} ></div>
         }
         {src && 
-        <video src={`<%= path %>/${src}`} loop muted='true' autoPlay width="400" height="200" playsInline></video>
+        <video src={`${src}`} loop muted='true' autoPlay width="400" height="200" playsInline></video>
         }
     </div>
 
@@ -266,22 +266,10 @@ const Main = () => {
                     <PaddedContainer>
                         <CenterPara>
                             <div dangerouslySetInnerHTML={setHtml(content.s3Block1)}></div>
-                        </CenterPara>
-                    </PaddedContainer>
-                    <div className="dual-image flex justify-center flex-wrap gap-4">
-                        <div>
-                            <img src={`${assetsPath}/image_s3_001_2x.jpg`} width="512" />
-
-                        </div>
-                        <div>
-                            <img src={`${assetsPath}/image_s3_002_2x.jpg`} width="512" />
-                        </div>
-                    </div>
-                    <PaddedContainer>
-                        <CenterPara>
                             <div dangerouslySetInnerHTML={setHtml(content.s3Block2)}></div>
                         </CenterPara>
                     </PaddedContainer>
+
                 </section>
                 <section style="--panelBgColor:#37BEA0;">
                     <PaddedContainer > 
